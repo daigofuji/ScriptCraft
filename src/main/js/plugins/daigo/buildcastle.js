@@ -25,6 +25,7 @@ var buildcastle = function(theblock) {
     }
 
     var block2 = "42";
+    //for floor -- iron brick
     // 45 is brick
     // 41 is gold
     // 57 is diamond
@@ -32,10 +33,10 @@ var buildcastle = function(theblock) {
     var buildtower = function(right, fwd){
         this
         .right(right)
-        .fwd(fwd);
-
-        for (var i = 6; i > 0; i--) {
-            this
+        .fwd(fwd)
+            //empty the cylinder by air
+            .cylinder(0,5,6)
+            //a floor
             .cylinder(block2,5,1)
             .up(1)
             .cylinder0(blockType,5,2)
@@ -43,9 +44,64 @@ var buildcastle = function(theblock) {
             .cylinder0(blocks.glass_pane,5,1)
             .up(1)
             .cylinder0(blockType,5,2)
-            .up(2);
-        }
-        this
+            .up(2)
+            //empty the cylinder by air
+            .cylinder(0,5,6)
+            //a floor
+            .cylinder(block2,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2)
+            .cylinder0(blocks.glass_pane,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2)
+            //empty the cylinder by air
+            .cylinder(0,5,6)
+            //a floor
+            .cylinder(block2,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2)
+            .cylinder0(blocks.glass_pane,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2)
+            //empty the cylinder by air
+            .cylinder(0,5,6)
+            //a floor
+            .cylinder(block2,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2)
+            .cylinder0(blocks.glass_pane,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2)
+            //empty the cylinder by air
+            .cylinder(0,5,6)
+            //a floor
+            .cylinder(block2,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2)
+            .cylinder0(blocks.glass_pane,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2)
+            //empty the cylinder by air
+            .cylinder(0,5,6)
+            //a floor
+            .cylinder(block2,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2)
+            .cylinder0(blocks.glass_pane,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2)
+
+        //cap it 
         .cylinder(blockType,5,1);
     };
 
@@ -63,26 +119,34 @@ var buildcastle = function(theblock) {
         //middle
     this
         //inside
+        //empty it
+        .box(0, 20,25,20)
+        // each floor is 5 height
         .box(block2,20,1,20)
         .up(1)
         .box0(blockType,20,4,20)
         .up(4)
+
         .box(block2,20,1,20)
         .up(1)
         .box0(blockType,20,4,20)
         .up(4)
+
         .box(block2,20,1,20)
         .up(1)
         .box0(blockType,20,4,20)
         .up(4)
+
         .box(block2,20,1,20)
         .up(1)
         .box0(blockType,20,4,20)
         .up(4)
+
         .box(block2,20,1,20)
         .up(1)
         .box0(blockType,20,4,20)
         .up(4)
+
         .box(blockType,20,1,20)
         .down(25);
 
