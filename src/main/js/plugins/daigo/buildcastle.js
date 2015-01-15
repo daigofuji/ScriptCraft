@@ -1,3 +1,18 @@
+/**
+### Drone.buildcastle() method
+
+constructs an enchantment table surrounded with books for max enchanting
+
+#### Parameters
+
+ * theblock  - user can specify block type for castle defaults to brick(45)
+
+#### Example
+    
+  /js buildcastle()
+
+*/
+
 var buildcastle = function(theblock) {
     var i ;
     this.chkpt('buildcastle');
@@ -17,55 +32,20 @@ var buildcastle = function(theblock) {
     var buildtower = function(right, fwd){
         this
         .right(right)
-        .fwd(fwd)
-        .cylinder(block2,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
-        .cylinder0(blocks.glass_pane,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
-        .cylinder(block2,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
-        .cylinder0(blocks.glass_pane,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
-        .cylinder(block2,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
-        .cylinder0(blocks.glass_pane,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
-        .cylinder(block2,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
-        .cylinder0(blocks.glass_pane,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
-        .cylinder(block2,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
-        .cylinder0(blocks.glass_pane,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
-        .cylinder(block2,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
-        .cylinder0(blocks.glass_pane,5,1)
-        .up(1)
-        .cylinder0(blockType,5,2)
-        .up(2)
+        .fwd(fwd);
+
+        for (var i = 6; i > 0; i--) {
+            this
+            .cylinder(block2,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2)
+            .cylinder0(blocks.glass_pane,5,1)
+            .up(1)
+            .cylinder0(blockType,5,2)
+            .up(2);
+        }
+        this
         .cylinder(blockType,5,1);
     };
 
@@ -109,17 +89,6 @@ var buildcastle = function(theblock) {
     this
         .move('buildcastle');
 
-
-    // if ( typeof floors == 'undefined' ) {
-    //     floors = 10;
-    // }
-    // this.chkpt('buildcastle'); // saves the drone position so it can return there later
-    // for ( i = 0; i < floors; i++ ) {
-    //     this.box(41,20,1,20)
-    //         .up()
-    //         .box0(blocks.glass_pane,20,3,20)
-    //         .up(3);
-    // }
     return this.move('buildcastle'); // return to where we started
 };
 var Drone = require('../drone/drone').Drone;
